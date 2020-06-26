@@ -41,16 +41,23 @@ $ npx sequelize-cli db:create
 **Setup is now Complete**
 
 ---------
+---------
 
-
+**Migration and Building Content**
+---------
 
 # build model & migration files
 $ npx sequelize model:generate \
---name Cat \
---attributes "firstCol:type secondCol:string thirdCol:integer"
+--name Cats \
+--attributes "name:string age:integer"
+
+# modify your migration file to adjust column attributes as needed
+# once migration file is setup properly, then migrate:
 
 # run any new migration files (specifically the up methods)
 $ npx sequelize db:migrate
+
+# table now exists on database
 
 # roll back a migration (specifically calls the down methods)
 # !!! avoid doing this
