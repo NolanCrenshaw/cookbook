@@ -51,8 +51,8 @@ $ npx sequelize model:generate \
 --name Cats \
 --attributes "name:string age:integer"
 
-###### modify your migration file to adjust column attributes as needed
-###### once migration file is setup properly, then migrate:
+*modify your migration file to adjust column attributes as needed*
+*once migration file is setup properly, then migrate:*
 
 ##### run any new migration files (specifically the up methods)
 $ npx sequelize db:migrate
