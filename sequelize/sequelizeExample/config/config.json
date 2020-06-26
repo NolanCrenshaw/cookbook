@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "cookbooker",
+    "password": "password",
+    "database": "cookbookDB_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  },
+  "test": {
+    "username": "cookbooker",
+    "password": "password",
+    "database": "cookbookDB_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  },
+  "production": {
+    "username": "cookbooker",
+    "password": "password",
+    "database": "cookbookDB_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  }
+}
