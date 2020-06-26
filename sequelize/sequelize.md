@@ -15,8 +15,6 @@
 ##### initialize sequelize-cli structure
         $ npx sequelize-cli init
 
----------
-
 ##### use psql to create postgres user for project
         $ psql
         ~># CREATE USER username WITH PASSWORD 'password' CREATEDB;
@@ -37,9 +35,6 @@
         $ npx sequelize-cli db:create
 
 
-### Setup is now Complete
-
----------
 ---------
 
 ### Migration
@@ -49,7 +44,7 @@
         --name Cats \
         --attributes "name:string,age:integer"
 
-*modify your migration file to adjust column attributes as needed \
+*modify your migration file to adjust column attributes as needed* \
 *once migration file is setup properly, then migrate:*
 
 ##### run any new migration files (specifically the up methods)
@@ -80,7 +75,7 @@
 
 ### Associating
 
-###### adjust migration file
+##### adjust migration file
         cat_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
@@ -89,7 +84,7 @@
 
 *Adding 'references: { model: "Cats" } establishes cat_id as a FOREIGN KEY*
 
-###### adjust models file
+##### adjust models file
         module.exports = (sequelize, DataTypes) => {
           const Cats = sequelize.define('Cats', {
             name: DataTypes.STRING,
@@ -104,6 +99,9 @@
           return Cats;
         };
 
-*In Table.associate function establish FOREIGN KEY pointer with Table.method: ".hasMany(), .belongsTo(), etc"* \
+*In Table.associate() establish FOREIGN KEY pointer with Table.method: ".hasMany(), .belongsTo(), etc"* 
 *Pointer comes from Table with the FOREIGN KEY with Table being pointed to adding receiving language to Table.assocate()*
+*onDelete and hooks are there to manage deleting required elements during an intentional DROP of the the Table*
+
+
 
