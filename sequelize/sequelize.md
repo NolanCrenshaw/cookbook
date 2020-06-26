@@ -47,7 +47,7 @@
 ##### build model & migration files
         $ npx sequelize-cli model:generate \
         --name Cats \
-        --attributes "name:string age:integer"
+        --attributes "name:string,age:integer"
 
 *modify your migration file to adjust column attributes as needed \
 *once migration file is setup properly, then migrate:*
@@ -77,4 +77,33 @@
         $ npx sequelize-cli db:seed:all
 
 ----------
+
+### Associating
+
+###### adjust migration file
+        cat_id: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          references: { model: "Cats" }
+        },
+
+*Adding 'references: { model: "Cats" } establishes cat_id as a FOREIGN KEY*
+
+###### adjust models file
+        module.exports = (sequelize, DataTypes) => {
+          const Cats = sequelize.define('Cats', {
+            name: DataTypes.STRING,
+            age: DataTypes.INTEGER
+          }, {});
+          Cats.associate = function(models) {
+            // associations can be defined here
+            // Cats is being targeted by a FOREIGN KEY on Owners Table
+            // Cats can have more than one owner, so `hasMany()` gets called
+            Cats.hasMany(models.Owners, { foreignKey: "cat_id", onDelete: "CASCADE", hooks: true });
+          };
+          return Cats;
+        };
+
+*In Table.associate function establish FOREIGN KEY pointer with Table.method: ".hasMany(), .belongsTo(), etc"* \
+*Pointer comes from Table with the FOREIGN KEY with Table being pointed to adding receiving language to Table.assocate()*
 
