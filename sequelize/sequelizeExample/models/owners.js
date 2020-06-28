@@ -6,9 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Owners.associate = function(models) {
     // associations can be defined here
-    // Owners has a FOREIGN KEY pointing at the Cats Table
-    // thus Owners has `belongTo` called on it to make the connection
-    Owners.belongsTo(models.Cats, { foreignKey: 'cat_id' });
+    Owners.hasMany(models.Cats, { foreignKey: 'cat_id' });
   };
   return Owners;
 };

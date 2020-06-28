@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Cats.associate = function(models) {
     // associations can be defined here
-    Cats.hasMany(models.Owners, { foreignKey: "cat_id", onDelete: "CASCADE", hooks: true })
+    Cats.hasMany(models.Owners, { foreignKey: "owner_id", onDelete: "CASCADE", hooks: true })
   };
   return Cats;
 };

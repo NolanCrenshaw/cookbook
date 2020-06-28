@@ -75,7 +75,7 @@
 
 ### Associating
 
-##### adjust migration file
+##### adjust migration file with references
         cat_id: {
           type: Sequelize.INTEGER,
           allowNull: false,
@@ -84,23 +84,54 @@
 
 *Adding 'references: { model: "Cats" } establishes cat_id as a FOREIGN KEY*
 
-##### adjust models file
+
+
+##### adjust models file with associations
         module.exports = (sequelize, DataTypes) => {
           const Cats = sequelize.define('Cats', {
             name: DataTypes.STRING,
             age: DataTypes.INTEGER
           }, {});
           Cats.associate = function(models) {
-            // associations can be defined here
-            // Cats is being targeted by a FOREIGN KEY on Owners Table
-            // Cats can have more than one owner, so `hasMany()` gets called
-            Cats.hasMany(models.Owners, { foreignKey: "cat_id", onDelete: "CASCADE", hooks: true });
+            Cats.belongsTo(models.Owners, { foreignKey: "ownersId", onDelete: "CASCADE", hooks: true });
           };
           return Cats;
         };
 
-*In Table.associate() establish FOREIGN KEY pointer with Table.method: ".hasMany(), .belongsTo(), etc"* 
-*Pointer comes from Table with the FOREIGN KEY with Table being pointed to adding receiving language to Table.assocate()*
+*Tables that associate indirectly are pointed to foreign key associations with 'columnMapping'* \
+        Cats.associate = function(models) {
+          const columnMapping= {
+            foreignKey: 'cat_id',
+            through: 'Owners',
+            otherKey: 'vet_id',
+          },
+          Cats.belongsToMany(models.Vets, columnMapping);
+        };
+
+*While the other side of the association points the other way*
+
+        Vets.associate = function(models) {
+          const columnMapping = {
+            foreignKey: 'vet_id',
+            through: 'Owners',
+            otherKey: 'cat_id'
+          },
+          Vets.hasMany(models.Cats, columnMapping);
+        };
+
+###### apply any validation requirements to models file
+        module.exports = (sequelize, DataTypes) => {
+          const Cats = sequelize.define('Cats', {
+            name: DataTypes.STRING,
+            age: DataTypes.INTEGER,
+            validate: {
+              notEmpty: true,
+            },
+          }, {});
+
+
+*In Table.associate() establish FOREIGN KEY pointer with Table.method: ".hasMany(), .belongsTo(), etc"* \
+*Pointer comes from Table with the FOREIGN KEY with Table being pointed to adding receiving language to Table.assocate()* \
 *onDelete and hooks are there to manage deleting required elements during an intentional DROP of the the Table*
 
 

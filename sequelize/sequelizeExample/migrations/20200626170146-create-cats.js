@@ -20,6 +20,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
+      owner_id: {
+        allowNull: true,
+        // reference established
+        references: { model: "Owners" }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
