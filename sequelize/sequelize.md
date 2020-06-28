@@ -99,6 +99,7 @@
         };
 
 *Tables that associate indirectly are pointed to foreign key associations with 'columnMapping'* \
+
         Cats.associate = function(models) {
           const columnMapping= {
             foreignKey: 'cat_id',
