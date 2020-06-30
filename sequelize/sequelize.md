@@ -98,7 +98,7 @@
           return Cats;
         };
 
-*Tables that associate indirectly are pointed to foreign key associations with 'columnMapping'* \
+*Tables that associate indirectly are pointed to foreign key associations with 'columnMapping'* 
 
         Cats.associate = function(models) {
           const columnMapping= {
@@ -120,7 +120,8 @@
           Vets.hasMany(models.Cats, columnMapping);
         };
 
-###### apply any validation requirements to models file
+##### apply any validation requirements to models file
+
         module.exports = (sequelize, DataTypes) => {
           const Cats = sequelize.define('Cats', {
             name: DataTypes.STRING,
