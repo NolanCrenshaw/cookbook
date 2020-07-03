@@ -63,7 +63,6 @@
         })
 
 ##### Regex in the route path
-*The route path can be inlaid with regex syntax to accommodate a range of match request beyond an exact one-to-one string comparision. An array may also be used so that Express checks each element of the array for a match to determine the request's URL path. The redirect method is then called to ensure that the actual pathname is specified by the browser on the response body.*
         app.get([/^\/(our-)?produ?ct{1,2}s?\/?$/i, '/productos'], (req, res) => {
             if (!req.path.toLowerCase().startsWith('/products')) {
                 res.redirect('/products');
@@ -71,9 +70,11 @@
             res.send('Products');
         });
 
-
+*The route path can be inlaid with regex syntax to accommodate a range of match request beyond an exact one-to-one string comparision. An array may also be used so that Express checks each element of the array for a match to determine the request's URL path. The redirect method is then called to ensure that the actual pathname is specified by the browser on the response body.*
 
 ### Templating HTML with 'pug'
+
+
 
 
 
