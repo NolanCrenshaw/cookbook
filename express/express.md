@@ -14,7 +14,7 @@ $ mkdir project-name
 $ cd project-name
 $ git init
 $ npm init -y
-$ npm install express@4.0.0 pug@^2.0.0 pg 
+$ npm install express@^4.0.0 pug@^2.0.0 
 $ npm install csurf@^1.0.0 cookie-parser@^1.0.0 body-parser@^1.0.0
 $ npm install sequelize@^5.0.0 sequelize-cli@^5.0.0 pg@^8.0.0
 $ npm install nodemon@^2.0.0 morgan --save-dev
