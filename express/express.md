@@ -9,6 +9,23 @@
 ### Creating the Project Directory and Installing Packages
 
 Building an Express App begins with a clean directory to establish the project in. Create a new directory, initialize git and npm, and install all the required packages. Development packages are installed with a '--save-dev' tag. Here is an example of a basic setup.
+```js
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "csurf": "^1.11.0",
+    "express": "^4.17.1",
+    "pg": "^8.3.0",
+    "pug": "^2.0.4",
+    "sequelize": "^5.22.3",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+```
+
 ```
 $ mkdir project-name
 $ cd project-name
