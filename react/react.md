@@ -5,12 +5,12 @@
 
 ##### Creating a React App
 ```
-npx create-react-app APPNAME
+npx create-react-app {APPNAME}
 ```
 
 ##### Creating a React App with a Template
 ```
-npx create-react-app APPNAME --template @appacademy/simple
+npx create-react-app {APPNAME} --template {@appacademy/simple}
 ```
 
 ##### Install Router Dom
@@ -132,7 +132,7 @@ export default class AppWithContext extends React.Component {
     render() {
         return (
             <NewContext.Provider value={this.state}>
-                <App {...this.props} />
+                <App {...this.props} />MAIN_NON-DEFAULT_ELEMENT
             </NameContext.Provider>
         )
     }
