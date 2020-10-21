@@ -1,5 +1,11 @@
 # Flask
 
-##### Initialize PipEnv
+##### Initialize and Install 
+``` 
+pipenv install flask
+```
 
-``` pipenv install
+##### Import
+```js
+from flask import Flask
+```

@@ -1,4 +1,4 @@
-# React Basics
+# React
 
 ------------
 ### Setup
