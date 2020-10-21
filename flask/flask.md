@@ -19,17 +19,18 @@ def hello():
     return '<h1>Hello World!</h1>'
 ```
 
-##### Manage Environmental Variables
-Install python's env package
+##### Environmental Variables
+Install python's env package. This allows for two environmental files: a ".flaskenv" and a ".env". Use the ".flaskenv" for all the Flask CLI configurations, and the ".env" for the application's configurations.
+
+[See the Flask documentation](https://flask.palletsprojects.com/en/1.1.x/cli/#environment-variables-from-dotenv)
 ```
 $ pipenv install python-dotenv
 ```
 
-Create '.flaskenv'
+###### .flaskenv
 ```
 FLASK_APP=project.py
 FLASK_ENV=development
-FLASK_VAR=example
 ```
 
 ##### Setup Configuration Class
