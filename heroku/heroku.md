@@ -1,11 +1,11 @@
 # Heroku-CLI Guide
-
 ###### Contents:
 - [Installation](#install-the-cli)
 - [Setup](#initial-setup)
 - [Initialize App](#initialize-heroku-app)
 - [Rename App](#rename-app)
 - [Git Deploy](#git-based-deployment)
+- [Docker Deploy](#docker-based-deployment)
 ###### External Links:
 - *[-- The Documentation --](https://devcenter.heroku.com/articles/heroku-cli)*
 - *[Authorization Info](https://devcenter.heroku.com/articles/authentication)*
@@ -38,11 +38,11 @@ Logged in as me@heroku.com
 ```
 -------
 ### Initialize Heroku App
-Heroku will associate with a local git repo in project's root directory.
+Heroku will associate with a local git repo in project's root directory. The default behavior is for Heroku to control deployment via Git.
 ```
 $ heroku create {app name}
 ```
-Confirm that the git association exists.
+Confirm that the git association exists as a Heroku remote repo. The *"git remote"* is a clone of the repo hosted on the Heroku servers.
 ```
 $ git remote -v
 ```
@@ -52,11 +52,28 @@ $ heroku git:remote -a {app name}
 ```
 -------
 ### Rename App
-Heroku CLI assigns random names when **heroku create** doesn't specify.
+Heroku CLI assigns random names if **heroku create** doesn't specify.
 ```
 $ heroku app:rename {new app name}
 ```
-
+To rename the Git remote.
+```
+$ git remote rename {app name} {new app name}
+```
 -------
 ### Git Based Deployment
-
+Command to push the local repo to the Heroku remote repo.
+```
+$ git push heroku master
+```
+Git branches outside of master are not reflected on heroku remote repo. But a branch can be pushed to the Heroku remote as a the master.
+```
+$ git push heroku {branch name}:master
+```
+Reseting/purging Heroku's remote git repo. **requires plug-in*
+```
+$ heroku plugins:install heroku-repu
+$ heroku repo:reset --app {app name}
+```
+-------
+### Docker Based Deployment
