@@ -1,6 +1,7 @@
-# SSH Key Commands
-- using the 'ssh-keygen' package
+# SSH Keys
+ ~ *Using the 'ssh-keygen' package.*
 
+------
 ##### List existing SSH keys
 ```
 $ ls -al ~/.ssh
