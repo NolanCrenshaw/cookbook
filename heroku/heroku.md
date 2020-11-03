@@ -1,4 +1,5 @@
 # Heroku-CLI Guide
+-------
 ###### Contents:
 - [Installation](#install-the-cli)
 - [Setup](#initial-setup)
@@ -6,8 +7,10 @@
 - [Rename App](#rename-app)
 - [Git Deploy](#git-based-deployment)
 - [Docker Deploy](#docker-based-deployment)
+- [Local Testing with Docker](#local-testing-dockerfile)
 ###### External Links:
 - *[-- The Documentation --](https://devcenter.heroku.com/articles/heroku-cli)*
+- *[Available Commands](https://devcenter.heroku.com/articles/heroku-cli-commands)*
 - *[Authorization Info](https://devcenter.heroku.com/articles/authentication)*
 - *[Plug-ins](https://devcenter.heroku.com/articles/authentication)*
 -------
@@ -62,7 +65,7 @@ $ git remote rename {app name} {new app name}
 ```
 -------
 ### Git Based Deployment
-Command to push the local repo to the Heroku remote repo.
+As stated before, creating a Heroku app initializes an empty repo on the heroku servers. That code repo serves as the deployment codebase. Simple push commands act to deploy the live application. The following command acts to push your local repo to the Heroku remote repo.
 ```
 $ git push heroku master
 ```
@@ -77,3 +80,54 @@ $ heroku repo:reset --app {app name}
 ```
 -------
 ### Docker Based Deployment
+Building the Heroku app from a Dockerfile involves an extra login step.
+You can use the Heroku CLI
+```
+$ heroku container:login
+```
+Or the Docker CLI
+```
+$ docker login --username={username} --password=$(heroku auth:token) registry.heroku.com
+```
+From here we can create the new app.
+```
+$ heroku create {app name}
+```
+Your docker image must be pushed to the heroku container.
+```
+$ heroku container:push web --app {app name}
+```
+Finalizing the Docker-based deploy is a simple release command.
+```
+$ heroku container:release web --app {app name}
+```
+*~ UNSUPPORTED DOCKERFILE COMMANDS ~*
+- VOLUME
+- EXPOSE  *(instead use $PORT environment variable)*
+- SHELL
+-------
+### Local Testing Dockerfile
+*See [Heroku's example Dockerfile](https://github.com/heroku/alpinehelloworld/blob/master/Dockerfile) for best practices.*
+
+Heroku recommends testing images as a non-root user because Heroku does not deploy images with root privileges. 
+
+Alpine:
+```
+RUN adduser -D {username}
+USER {username}
+```
+Ubuntu:
+```
+RUN useradd -m {username}
+USER {username}
+```
+Confirming how container is running.
+```
+$ docker exec {container id} bash
+$ whoami
+```
+Heroku does not run the container as the USER specified in the Dockerfile. You can confirm the heroku user in the CLI.
+```
+$ heroku run bash
+$ whoami
+```
