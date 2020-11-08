@@ -1,5 +1,13 @@
-This Repo is meant to be a private storage of examples and commands of various coding language and design. It is not exhaustive by any means. It is to be used as reference.
+# README.md
+*This Cookbook is meant to be a written collection of guides, and a private storage of example-files and commands. It is not meant to be exhaustive by any means. Much of what will be written will be a retelling of official documents and various guides found online. It is to be used as reference. This repo will grow as my knowledge base and exposure to resources expands.*
+*- Nolan Crenshaw*
 
-Being in the initial stages of this project, this will also serve as a type of git practice. Changes will be made to this file and others as my knowledge base and exposure to resources expands.
-
-**- Nolan Crenshaw**
+---
+~ **Quick Links** ~
+    **Guides**
+    - [Docker](https://github.com/NolanCrenshaw/cookbook/blob/master/docker/docker.md)
+    - [Express](https://github.com/NolanCrenshaw/cookbook/blob/master/express/express.md)
+    - [Flask](https://github.com/NolanCrenshaw/cookbook/blob/master/flask/flask.md)
+    - [Heroku](https://github.com/NolanCrenshaw/cookbook/blob/master/heroku/heroku.md)
+    - [React](https://github.com/NolanCrenshaw/cookbook/blob/master/react/react.md)
+    - [Sequelize](https://github.com/NolanCrenshaw/cookbook/blob/master/sequelize/sequelize.md)
