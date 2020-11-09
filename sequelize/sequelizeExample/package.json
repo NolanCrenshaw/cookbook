@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lodash": ">=4.17.19",
     "pg": "^8.2.1",
     "sequelize": "^5.22.1",
     "sequelize-cli": "^5.5.1"
