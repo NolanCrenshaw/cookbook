@@ -38,6 +38,10 @@ FROM python:3.8.1-slim-buster
 RUN mkdir -p /home/app
 
 # create the app user
+# ~~ ERROR ~~
+# on ```$ docker-compose -f docker-compose.prod.yml up -d --build```
+# ~~ "ERROR: Service 'web' failed to build"
+# ~~ "returned a non-zero code: 1"
 RUN addgroup -S app && adduser -S app -G app
 
 # create the appropriate directories
