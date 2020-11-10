@@ -3,11 +3,16 @@
 *- Nolan Crenshaw*
 
 ---
-**Quick Links**
-**Guides**
+###Quick Links
+
+*Guides*
 - [Docker](https://github.com/NolanCrenshaw/cookbook/blob/master/docker/docker.md)
 - [Express](https://github.com/NolanCrenshaw/cookbook/blob/master/express/express.md)
 - [Flask](https://github.com/NolanCrenshaw/cookbook/blob/master/flask/flask.md)
 - [Heroku](https://github.com/NolanCrenshaw/cookbook/blob/master/heroku/heroku.md)
 - [React](https://github.com/NolanCrenshaw/cookbook/blob/master/react/react.md)
 - [Sequelize](https://github.com/NolanCrenshaw/cookbook/blob/master/sequelize/sequelize.md)
+
+*Example Builds*
+- [Flask | Postgres | Nginx -- docker-compose](https://github.com/NolanCrenshaw/cookbook/tree/master/flask/flask-on-docker)
+- [React | Nginx -- docker-compose](https://github.com/NolanCrenshaw/cookbook/tree/master/react/react-on-docker)
