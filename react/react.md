@@ -1,18 +1,46 @@
 # React
+---
+*Contents*
+- [Setup](#setup)
+- [Dockerfile](#add-dockerfile)
 
-------------
+*Quick Links*
+- [Create React App Templates](https://www.npmjs.com/search?q=cra-template-*)
+---
 ### Setup
+**Create React App**
+*Builds directory with specified name.*
+```bash
+$ npx create-react-app {APPNAME}
+```
+**Create React App with Template**
+*Builds with minimal content. Multiple templates exist*
+```bash
+$ npx create-react-app {APPNAME} --template @appacademy/simple
+```
+---
+### Add Dockerfile
+```yaml
+FROM node:15.1.0-alpine3.10
 
-##### Creating a React App
-```
-npx create-react-app {APPNAME}
-```
+WORKDIR /app
 
-##### Creating a React App with a Template
-```
-npx create-react-app {APPNAME} --template {@appacademy/simple}
-```
+# adds '/app/node_modules/.bin' to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
+# command lists
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install
+RUN npm install react-scripts@4.0.0 -g
+
+# copies '.' to container's './'
+COPY . ./
+
+# start script
+CMD ["npm", "start"]
+```
+---
 ##### Install Router Dom
 ```
 npm install react-router-dom@^5.0.0
