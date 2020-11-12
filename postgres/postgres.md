@@ -1,10 +1,17 @@
 # PostgreSQL Guide
 *Contents*
+- [Address Syntax](#env-syntax)
 - [Docker CLI](#docker-setup)
 - [Docker-Compose](#docker-compose-setup)
 
 *Quick Links*
 - [Offical Documentation](https://www.postgresql.org/docs/current/index.html)
+---
+### ENV Syntax
+**Required Syntax for Pointing Applications at DB**
+```
+DATABASE_URL=postgresql://{db_username}:{db_password}@localhost:{PORT}/{db_name}
+```
 ---
 ### Docker CLI Setup
 *~~ This method does not allow data to persist ~~*
