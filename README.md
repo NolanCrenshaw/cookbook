@@ -10,10 +10,12 @@
 - [Express](https://github.com/NolanCrenshaw/cookbook/blob/master/express/express.md)
 - [Flask](https://github.com/NolanCrenshaw/cookbook/blob/master/flask/flask.md)
 - [Heroku](https://github.com/NolanCrenshaw/cookbook/blob/master/heroku/heroku.md)
+- [PostgreSQL]()
 - [React](https://github.com/NolanCrenshaw/cookbook/blob/master/react/react.md)
 - [Sequelize](https://github.com/NolanCrenshaw/cookbook/blob/master/sequelize/sequelize.md)
 
 #### Sample Builds
 *Docker-compose Setups*
-- [Flask | Postgres](https://github.com/NolanCrenshaw/cookbook/tree/master/flask/flask-on-docker)
-- [React](https://github.com/NolanCrenshaw/cookbook/tree/master/react/react-on-docker)
+- [Flask App using Postgres](https://github.com/NolanCrenshaw/cookbook/tree/master/flask/flask-on-docker)
+- [React App](https://github.com/NolanCrenshaw/cookbook/tree/master/react/react-on-docker)
+- [Postgres Server]()
