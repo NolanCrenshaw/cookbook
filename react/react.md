@@ -2,9 +2,10 @@
 ---
 *Contents*
 - [Setup](#setup)
-- [Dockerfile](#add-dockerfile)
+- [Dockerizing](#dockerfile)
 
 *Quick Links*
+- [The Official Documentation](https://reactjs.org/docs/getting-started.html)
 - [Create React App Templates](https://www.npmjs.com/search?q=cra-template-*)
 ---
 ### Setup
@@ -14,12 +15,14 @@
 $ npx create-react-app {APPNAME}
 ```
 **Create React App with Template**
-*Builds with minimal content. Multiple templates exist*
+*Builds with custom content. Templates can be searched for [on npmjs.com](https://www.npmjs.com/search?q=cra-template-*).*
 ```bash
 $ npx create-react-app {APPNAME} --template @appacademy/simple
 ```
 ---
-### Add Dockerfile
+### Dockerizing
+**Add Dockerfile**
+*Basic development build example*
 ```yaml
 FROM node:15.1.0-alpine3.10
 
@@ -39,6 +42,35 @@ COPY . ./
 
 # start script
 CMD ["npm", "start"]
+```
+**Add .dockerignore**
+```
+node_modules
+build
+.dockerignore
+Dockerfile
+Dockerfile.prod
+```
+**Build the Image**
+*```-t``` tags the container*
+```bash
+$ docker build -t {APPNAME}:dev
+```
+**Run the Container**
+*```-it``` specifies interactive mode, otherwise react-scripts will exit on start-up.*
+*```--rm``` removes the container and volumes on exit*
+*```-v``` creates a volume*
+*```-p``` sets ports for the container to expose*
+*```-e CHOKIDAR_USEPOLLING=true``` sets the react-app watcher to enable hot loading in the container*
+```bash
+$ docker run \
+    -it \
+    --rm \
+    -v ${PWD}:/app \
+    -v /app/node_modules \
+    -p 3001:3000 \
+    -e CHOKIDAR_USEPOLLING=true \
+    {APPNAME}:dev
 ```
 ---
 ##### Install Router Dom
