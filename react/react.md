@@ -3,6 +3,7 @@
 *Contents*
 - [Setup](#setup)
 - [Dockerizing](#dockerfile)
+- [React-modal](#react-modal)
 
 *Quick Links*
 - [The Official Documentation](https://reactjs.org/docs/getting-started.html)
@@ -72,6 +73,89 @@ $ docker run \
     -e CHOKIDAR_USEPOLLING=true \
     {APPNAME}:dev
 ```
+---
+### React-Modal
+- [npmjs page](https://www.npmjs.com/package/react-modal)
+
+*Install*
+```bash
+$ npm install react-modal
+```
+*Import*
+```js
+import Modal from 'react-modal';
+```
+*Style*
+```js
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+```
+*Subtitle*
+```js
+var subtitle;
+```
+*Bind to Element*
+```js
+Modal.setAppElement('#yourAppElement')
+```
+*State Hook*
+```js
+const [modalIsOpen, setIsOpen] = useState(false);
+```
+*Toggles*
+```js
+function openModal() {
+    setIsOpen(true);
+}
+
+function closeModal() {
+    setIsOpen(false);
+}
+```
+*Controls*
+```js
+function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+}
+```
+*Render*
+```js
+return (
+      <div>
+        <button onClick={openModal}>Open Modal</button>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+
+          <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
+          <button onClick={closeModal}>close</button>
+          <div>I am a modal</div>
+          <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form>
+        </Modal>
+      </div>
+    );
+```
+---
+###~EVERYTHING BELOW NEEDS REWORKING~
 ---
 ##### Install Router Dom
 ```
