@@ -1,8 +1,10 @@
 # Javascript
 **Contents**
 - [node CLI](#node-cli)
-- [forEach](#foreach)
-- [map](#map)
+- [forEach](#array.foreach())
+- [map](#array.map())
+- [filter](#array.filter())
+- [reduce](#array.reduce())
 ---
 ### node CLI
 ```
@@ -19,8 +21,8 @@ Press ^C to abort current expression, ^D to exit the repl
 >
 ```
 ---
-### forEach
-Method to iterate through an array.
+### Array.forEach()
+~ Method to iterate through an array.
 ```js
 let things = ['thing1', 'thing2', 'thing3'];
 
@@ -28,7 +30,6 @@ things.forEach(thing => console.log(thing));
 ```
 *output*
 ```
-> things.forEach(thing => console.log(thing));
 thing1
 thing2
 thing3
@@ -63,8 +64,8 @@ undefined
 > 
 ```
 ---
-### map
-Method to alter each element of an array.
+### Array.map()
+~ Method to alter each element of an array.
 ```js
 let things = ['thing1', 'thing2', 'thing3'];
 
@@ -73,5 +74,34 @@ things.map(thing => thing.toUpperCase());
 *output*
 ```
 [ 'THING1', 'THING2', 'THING3' ]
->
 ```
+---
+### Array.filter()
+~ Method to select elements from an iteration of an array.
+*does not change argument array*
+```js
+let things = ['thing1', 'thing2', 'thing3'];
+
+things.filter(thing => thing.includes('2'));
+```
+*output*
+```
+[ 'thing2' ]
+```
+---
+### Array.reduce()
+~ Method to remove elements out of an array.
+
+*```accum``` defaults to first element.*
+*```el``` defaults to second element.*
+*```0``` in this example is representing the assigned default for ```accum```*
+
+```js
+let nums = [3, 7, 5, 9];
+
+nums.reduce((accum, el) => (accum + el), 0);
+```
+*output*
+```
+24
+``` 
