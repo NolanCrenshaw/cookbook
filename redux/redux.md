@@ -6,7 +6,7 @@
 - [createStore](#createstore)
 - [Store Methods](#store-methods)
 - [dispatch()](#dispatch())
-- [subscribe()](#subsribe())
+- [subscribe()](#subscribe)
 ---
 ### Reducer
 
