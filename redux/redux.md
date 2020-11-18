@@ -22,7 +22,13 @@ Thunks are an alternative approach. A thunk is a general concept in computer sci
 
 ---
 ### createStore
-
+```createStore``` takes up to three arguments and returns a Redux store.
+```js
+createStore(reducer, [preloadedState], [enhancer]);
+```
+```reducer``` *(required)* Function that receives store's current state and incoming action. Returns next state.
+```preloadedState``` Object representing application state that existed before store was created.
+```enhancer``` Function that can modify store.
 ```js
 import { createStore } from 'redux';
 
