@@ -10,8 +10,10 @@
 - [Express](https://github.com/NolanCrenshaw/cookbook/blob/master/express/express.md)
 - [Flask](https://github.com/NolanCrenshaw/cookbook/blob/master/flask/flask.md)
 - [Heroku](https://github.com/NolanCrenshaw/cookbook/blob/master/heroku/heroku.md)
+- [Javascript](https://github.com/NolanCrenshaw/cookbook/blob/master/javascript/javascript.md)
 - [PostgreSQL](https://github.com/NolanCrenshaw/cookbook/blob/master/postgres/postgres.md)
 - [React](https://github.com/NolanCrenshaw/cookbook/blob/master/react/react.md)
+- [Redux](https://github.com/NolanCrenshaw/cookbook/blob/master/redux/redux.md)
 - [Sequelize](https://github.com/NolanCrenshaw/cookbook/blob/master/sequelize/sequelize.md)
 
 #### Sample Builds
