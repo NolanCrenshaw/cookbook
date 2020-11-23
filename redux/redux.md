@@ -1,5 +1,6 @@
 # Redux
 **Contents**
+- [Packages](#packages)
 - [Reducer](#reducer)
 - [Thunks](#thunks)
 - [Actions](#actions)
@@ -7,6 +8,17 @@
 - [Store Methods](#store-methods)
 - [dispatch()](#dispatch)
 - [subscribe()](#subscribe)
+---
+### Packages
+```
+$ npm install \
+redux \
+react-redux \
+redux-logger \
+redux-thunk \
+redux-devtools-extension
+```
+
 ---
 ### Reducer
 
@@ -96,4 +108,9 @@ store.dispatch(addOrange); // [ 'orange', 'orange' ]
 unsubscribeDisplay();
 
 store.dispatch(addOrange); // no output
+```
+---
+### useSelector()
+```js
+const state = useSelector(state => state);
 ```
