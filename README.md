@@ -25,5 +25,7 @@ _Docker-compose Setups_
 
 - [Flask App using Postgres](https://github.com/NolanCrenshaw/cookbook/tree/master/flask/flask-on-docker)
 - [React App](https://github.com/NolanCrenshaw/cookbook/tree/master/react/react-on-docker)
+- [React Dockerized](https://github.com/NolanCrenshaw/cookbook/tree/master/react/react-dockerized-example-project)
+- [Redux Example Project](https://github.com/NolanCrenshaw/cookbook/tree/master/redux/react-redux-example-project)
 - [Postgres Server](https://github.com/NolanCrenshaw/goboatn-sql-server)
 - [React Flask Project Starter](https://github.com/NolanCrenshaw/cookbook/tree/master/starter-builds/react-flask-starter)
