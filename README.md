@@ -30,3 +30,7 @@ _Docker-compose Setups_
 - [Redux Example Project](https://github.com/NolanCrenshaw/cookbook/tree/master/redux/react-redux-example-project)
 - [Postgres Server](https://github.com/NolanCrenshaw/goboatn-sql-server)
 - [React Flask Project Starter](https://github.com/NolanCrenshaw/cookbook/tree/master/starter-builds/react-flask-starter)
+
+_Templates_
+
+- [React App Single Page](https://github.com/NolanCrenshaw/standard-singlepage-template)
