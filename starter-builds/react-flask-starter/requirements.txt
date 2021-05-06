@@ -1,7 +1,7 @@
 six==1.15.0
 click==7.1.2
 Flask==1.1.2
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Flask-SQLAlchemy==2.4.4
 Flask-WTF==0.14.3
 flask-jwt-extended==3.24.1
